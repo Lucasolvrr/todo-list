@@ -12,7 +12,7 @@
       <div class="ml-4">
         <button
           type="submit"
-          class=" rounded-full font-bold w-28 py-2 px-3  bg-blue-500 text-center text-white hover:bg-blue-600 focus:outline-none focus:ring shadow-md"
+          class=" bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-full font-bold w-28 py-2 px-3  bg-blue-500 text-center text-white hover:bg-blue-600 focus:outline-none focus:ring shadow-md"
           :class="{ 'opacity-50': isDisabled }"
           :disabled="isDisabled"
         >
