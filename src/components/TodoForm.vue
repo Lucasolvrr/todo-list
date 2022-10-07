@@ -12,7 +12,7 @@
       <div class="ml-4">
         <button
           type="submit"
-          class=" py-2 px-4 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-800-400 focus:ring-opacity-75 rounded-full font-bold w-28 py-2 px-3 text-center text-white hover:bg-slate-600 focus:outline-none focus:ring shadow-md"
+          class="py-2 px-4 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-800-400 focus:ring-opacity-75 rounded-full font-bold w-28 py-2 px-3 text-center text-white hover:bg-slate-600 focus:outline-none focus:ring shadow-md"
           :class="{ 'opacity-90': isDisabled }"
           :disabled="isDisabled"
         >
