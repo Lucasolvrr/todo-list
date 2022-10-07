@@ -14,7 +14,7 @@
         </button>
         <button
           type="button"
-          class="appearance-none font-bold bg-red-700 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-red-600"
+          class="appearance-none font-bold bg-red-900 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-red-600"
           @click="handleDeleteClick"
         >
           excluir
