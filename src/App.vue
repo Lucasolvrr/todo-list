@@ -1,6 +1,6 @@
 <template  >
  
-    <div class="border-stone-900 shadow-slate-400 rounded-lg px-10 py-10 mx-auto my-8 w-auto">
+    <div class=" bg-white shadow-2xl w-fit shadow-slate-400 rounded-lg px-10 py-10 mx-auto my-8 ">
     <Todo />
   </div>
  

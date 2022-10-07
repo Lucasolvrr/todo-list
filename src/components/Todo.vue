@@ -1,7 +1,7 @@
 <template>
     <div class="font-sans font-thin space-y-4" >
       <div>
-        <h1 class="font-sans font-light text-center pb-10 text-4xl text-slate-800">Minhas tarefas</h1>
+        <h1 class="font-sans font-light text-center pb-6 text-4xl text-slate-800">Minhas tarefas</h1>
       </div>
       <div>
         <TodoForm :item="item" @save="handleSave" />

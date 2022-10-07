@@ -5,7 +5,7 @@
           ref="inputRef"
           v-model="text"
           type="text"
-          class="border-slate-400 shadow-md  w-full border rounded-full px-3 py-2 focus:outline-none focus:ring text-gray-500 placeholder-gray-500 placeholder-opacity-100"
+          class="border-slate-600 shadow-md  w-full border rounded-full px-3 py-2 focus:outline-none focus:ring text-gray-500 placeholder-gray-500 placeholder-opacity-100"
           placeholder="Digite uma tarefa...."
         />
       </div>
