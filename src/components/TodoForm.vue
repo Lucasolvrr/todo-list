@@ -5,15 +5,15 @@
           ref="inputRef"
           v-model="text"
           type="text"
-          class=" shadow-md  w-full border rounded-full px-3 py-2 focus:outline-none focus:ring text-gray-500 placeholder-gray-500 placeholder-opacity-50"
+          class="border-slate-400 shadow-md  w-full border rounded-full px-3 py-2 focus:outline-none focus:ring text-gray-500 placeholder-gray-500 placeholder-opacity-100"
           placeholder="Digite uma tarefa...."
         />
       </div>
       <div class="ml-4">
         <button
           type="submit"
-          class=" bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 rounded-full font-bold w-28 py-2 px-3  bg-blue-500 text-center text-white hover:bg-blue-600 focus:outline-none focus:ring shadow-md"
-          :class="{ 'opacity-50': isDisabled }"
+          class=" py-2 px-4 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-800-400 focus:ring-opacity-75 rounded-full font-bold w-28 py-2 px-3 text-center text-white hover:bg-slate-600 focus:outline-none focus:ring shadow-md"
+          :class="{ 'opacity-90': isDisabled }"
           :disabled="isDisabled"
         >
           {{ isNewItem ? "Adicionar" : "Salvar" }}

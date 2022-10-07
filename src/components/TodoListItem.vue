@@ -1,23 +1,23 @@
 <template>
-    <div class="flex flex-wrap items-center shadow my-5 py-2 pr-4 pb-2 text-bold">
+    <div class="flex flex-wrap items-center shadow rounded-2xl my-5 py-2 pt-2 pr-4 pb-2 ">
 
-      <div class=" pr-2 font-normal rounded-3xl rounded-l-lg  ml-4 text-bold">
+      <div class=" pr-2 font-normal rounded-3xl rounded-l-lg  ml-4 ">
         {{ item.text }}
       </div>
       <div class="ml-auto space-x-2">
         <button
           type="button"
-          class="appearance-none bg-green-500 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-600"
+          class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-600"
           @click="handleEditClick"
         >
           editar
         </button>
         <button
           type="button"
-          class="appearance-none bg-red-500 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-red-600"
+          class="appearance-none font-bold bg-red-700 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-red-600"
           @click="handleDeleteClick"
         >
-          deletar
+          excluir
         </button>
       </div>
     </div>
