@@ -12,7 +12,7 @@
       <div class="ml-4">
         <button
           type="submit"
-          class="transition ease-in-out delay-150 bg-black hover:-translate-y-0.5 hover:scale-100 hover:bg-neutral-900 duration-300py-2 px-4 text-white font-semibold rounded-lg shadow-md hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-zinc-800-400 focus:ring-opacity-75 rounded-full font-bold w-28 py-2 px-3 text-center text-white hover:bg-slate-600 focus:outline-none focus:ring shadow-md"
+          class="ease-in-out duration-300 bg-black hover:-translate-y-0.5 hover:scale-100 hover:bg-neutral-900 py-2 px-4 text-white font-semibold rounded-lg shadow-md hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-zinc-800-400 focus:ring-opacity-75 rounded-full font-bold w-28 py-2 px-3 text-center text-white hover:bg-slate-600 focus:outline-none focus:ring shadow-md"
           :class="{ 'opacity-90': isDisabled }"
           :disabled="isDisabled"
         >
