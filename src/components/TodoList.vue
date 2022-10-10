@@ -1,5 +1,5 @@
 <template>
-    <div class=" space-y-2">
+    <div class="space-y-2">
       <TodoListItem
         v-for="item in items"
         :key="item.id"
