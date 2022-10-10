@@ -7,7 +7,7 @@
       <div class="ml-auto space-x-2">
         <button
           type="button"
-          class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-600"
+          class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-500"
           @click="handleEditClick"
         >
           editar
