@@ -2,11 +2,11 @@
   
     <div class="flex flex-wrap items-center shadow rounded-2xl my-5 py-2 pt-z pr-4 pb-2">
       
-        <label class="accent-pink-500 pl-4">
-        <input type="checkbox" > 
-        </label>
-    
-      <div class="pr-2 font-normal text-gray-900 rounded-3xl rounded-l-lg  ml-5">
+      <label class="accent-pink-500 pl-4"> 
+        <input type="checkbox"> 
+      </label>  
+
+      <div class="pr-2 font-normal text-gray-900 rounded-3xl rounded-l-lg  ml-2.5">
         {{ item.text }}
       </div>
       <div class="ml-auto space-x-2">
@@ -54,8 +54,6 @@
         components: {CheckboxEvent}
 
       });
-
-      
   
       function handleEditClick() {
         emit("edit", props.item);
