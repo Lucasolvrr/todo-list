@@ -25,7 +25,7 @@
     };
   }
   
-  function getItemsFromStorage() {
+  function getItemsFromStorage() {  //colocar itens na memória
     try {
       return JSON.parse(localStorage.getItem("items")) || [];
     } catch (e) {
@@ -33,7 +33,7 @@
     }
   }
   
-  function saveItemsToStarage(items) {
+  function saveItemsToStarage(items) { //salvar
     try {
       localStorage.setItem("items", JSON.stringify(items));
     } catch (e) {
@@ -64,27 +64,27 @@
       function addNewItem(item) {
         items.value.push({
           ...item,
-          id: new Date().getTime(), // use timestamp as ID
+          id: new Date().getTime(), //e timestamp e 'Id' s
           timestamp: new Date().getTime(),
         });
       }
   
-      function deleteItem(item) {
+      function deleteItem(item) {                       //deletar
         items.value.splice(findItemIndex(item), 1);
       }
   
-      function updateExistingItem(item) {
+      function updateExistingItem(item) {                //atualizar item
         items.value.splice(findItemIndex(item), 1, item);
       }
   
-      function handleSave(itemToSave) {
+      function handleSave(itemToSave) {  //salvar novo item
         if (itemToSave.id) {
           updateExistingItem(itemToSave);
         } else {
           addNewItem(itemToSave);
         }
   
-        item.value = newItem();
+        item.value = newItem();    
       }
   
       function handleEdit(itemToEdit) {
@@ -92,10 +92,10 @@
       }
   
       function handleDelete(itemToDelete) {
-        deleteItem(itemToDelete);
+        deleteItem(itemToDelete);                //deletar
       }
   
-      return {
+      return {                  
         item,
         items,
         handleSave,

@@ -5,12 +5,13 @@
         {{ item.text }}
       </div>
       <div class="ml-auto space-x-2">
-        <button
+        <button  
           type="button"
           class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-500"
-          @click="handleEditClick"
+          @click="handleEditClick" 
+          v-on:click="makeRed"
         >
-          editar
+       editar
         </button>
         <button
           type="button"
@@ -18,13 +19,15 @@
           @click="handleDeleteClick"
         >
           excluir
+          
         </button>
       </div>
     </div>
   </template>
   
   <script>
-  import { computed } from "vue";
+  
+  import { computed } from "vue"; //e 'computed'
   
   export default {
     props: {
@@ -48,11 +51,17 @@
       function handleDeleteClick() {
         emit("delete", props.item);
       }
-  
+
+      function makeRed () {
+    $( "edit" ).addClass( ".red" );    
+}
+
       return {
+        makeRed,                 //arrumar função makeRed
         formattedTimestamp,
         handleEditClick,
         handleDeleteClick,
+       
       };
     },
   };

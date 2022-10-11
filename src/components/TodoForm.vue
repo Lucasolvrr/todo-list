@@ -9,21 +9,22 @@
           placeholder="Digite uma tarefa...."
         />
       </div>
-      <div class="ml-4">
+      <div class="ml-4"> 
         <button
           type="submit"
           class="ease-in-out duration-300 bg-black hover:-translate-y-0.5 hover:scale-100 hover:bg-neutral-900 py-2 px-4 text-white font-semibold rounded-lg shadow-md hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-zinc-800-400 focus:ring-opacity-75 rounded-full font-bold w-28 py-2 px-3 text-center text-white hover:bg-slate-600 focus:outline-none focus:ring shadow-md"
           :class="{ 'opacity-90': isDisabled }"
           :disabled="isDisabled"
         >
-          {{ isNewItem ? "Adicionar" : "Salvar" }}
+          {{ isNewItem ? "Adicionar" : "Salvar" }}  
+          
         </button>
       </div>
     </form>
   </template>
   
   <script>
-  import { computed, ref, watch } from "vue";
+  import { computed, ref, watch } from "vue"; //e "computed" 'ref' 'watch'
   
   export default {
     props: {
@@ -33,7 +34,7 @@
       },
     },
   
-    setup(props, { emit }) {
+    setup(props, { emit }) { //e "emit"
       const inputRef = ref(null);
       const text = ref(props.item.text);
       const isNewItem = computed(() => props.item.id === null);
@@ -43,12 +44,12 @@
         () => props.item,
         () => {
           text.value = props.item.text;
-          inputRef.value.focus(); // focus input when the props changed
+          inputRef.value.focus(); // focar no input logo após a mudança?
         }
       );
   
       function handleSubmit() {
-        emit("save", { ...props.item, text: text.value });
+        emit("save", { ...props.item, text: text.value }); //salvar após a mudança
       }
   
       return {

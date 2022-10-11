@@ -1,5 +1,5 @@
 <template>
-    <div class="space-y-2">
+    <div class=""> 
       <TodoListItem
         v-for="item in items"
         :key="item.id"
@@ -24,13 +24,13 @@
       },
     },
   
-    setup(_, { emit }) {
+    setup(_, { emit }) {            // e 'emit'
       function handleEdit(item) {
-        emit("edit", item);
+        emit("edit", item);       //aplicar edição
       }
   
       function handleDelete(item) {
-        emit("delete", item);
+        emit("delete", item);        
       }
   
       return {
