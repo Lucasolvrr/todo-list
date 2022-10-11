@@ -65,11 +65,9 @@
 
       
       return {
-
         formattedTimestamp,
         handleEditClick,
         handleDeleteClick,
-        
       };
     },
   };
