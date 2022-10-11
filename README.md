@@ -34,11 +34,9 @@ npm run serve
 
 ```
 npm run dev
-
 ```
 ##### Using Yarn:
 
 ```
 yarn dev
-
 ```
