@@ -1,6 +1,11 @@
 <template>
+  
     <div class="flex flex-wrap items-center shadow rounded-2xl my-5 py-2 pt-z pr-4 pb-2">
-
+      
+        <label class="accent-pink-500 pl-4">
+        <input type="checkbox" > 
+        </label>
+    
       <div class="pr-2 font-normal text-gray-900 rounded-3xl rounded-l-lg  ml-5">
         {{ item.text }}
       </div>
@@ -9,9 +14,10 @@
           type="button"
           class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-500"
           @click="handleEditClick" 
-          v-on:click="makeRed"
+        
         >
-       editar
+        editar  
+
         </button>
         <button
           type="button"
@@ -21,15 +27,17 @@
           excluir
           
         </button>
+
       </div>
     </div>
   </template>
   
   <script>
-  
-  import { computed } from "vue"; //e 'computed'
+
+  import { computed } from "vue";                         //e 'computed'
   
   export default {
+  
     props: {
       item: {
         type: Object,
@@ -42,7 +50,12 @@
         const date = new Date(props.item.timestamp);
   
         return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+
+        components: {CheckboxEvent}
+
       });
+
+      
   
       function handleEditClick() {
         emit("edit", props.item);
@@ -52,12 +65,9 @@
         emit("delete", props.item);
       }
 
-      function makeRed () {
-    $( "edit" ).addClass( ".red" );    
-}
-
+      
       return {
-        makeRed,                 //arrumar função makeRed
+
         formattedTimestamp,
         handleEditClick,
         handleDeleteClick,

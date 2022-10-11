@@ -33,7 +33,7 @@
     }
   }
   
-  function saveItemsToStarage(items) { //salvar
+  function saveItemsToStarage(items) {    //salvar
     try {
       localStorage.setItem("items", JSON.stringify(items));
     } catch (e) {
