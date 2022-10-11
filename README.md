@@ -13,19 +13,19 @@ ToDo List ultilizando Vue 3 + vite + tailwind CSS
 git clone https://github.com/Lukas-xrz/todo-list
 ```
 
-3. ##### Open the project folder:
+2. ##### Open the project folder:
 
 ```
 cd todo-list
 ```
 
-4. ##### Install packages and dependencies:
+3. ##### Install packages and dependencies:
 
 ```
 npm install
 ```
 
-5. ##### Start a local dev server at `http://localhost:`:
+4. ##### Start a local dev server at `http://localhost:`:
 
 ```
 npm run serve 
@@ -35,7 +35,7 @@ npm run serve
 ```
 npm run dev
 ```
-##### Using Yarn:
+5. ##### Using Yarn:
 
 ```
 yarn dev
