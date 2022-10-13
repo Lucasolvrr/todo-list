@@ -7,7 +7,9 @@
       </label>  
 
       <div class="pr-2 font-normal text-gray-900 rounded-3xl rounded-l-lg  ml-2 pt-1">
-        {{ item.text }}
+
+    {{ item.text }}
+
       </div>
       <div class="ml-auto space-x-2">
 
@@ -19,7 +21,7 @@
           editar            
 
         </button>
-        
+
         <button
           type="button"
           class="appearance-none font-bold bg-red-900 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-red-600"
@@ -55,7 +57,7 @@
         components: {CheckboxEvent}
 
       });
-  
+      
       function handleEditClick() {
         emit("edit", props.item);
       }
@@ -65,10 +67,12 @@
       }
    
       return {
+      
         formattedTimestamp,
         handleEditClick,
         handleDeleteClick,
       };
     },
   };
+
   </script>
