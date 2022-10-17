@@ -2,7 +2,7 @@
   
     <div class="flex flex-wrap items-center shadow rounded-2xl my-5 py-3 pt-z pr-4 pb-3">
       
-      <label class="accent-pink-500 pl-4 pt-1"> 
+      <label class="accent-pink-500 pl-4 pt-1.5"> 
         <input type="checkbox" > <!--checkbox-->
       </label>  
 
@@ -18,7 +18,7 @@
           class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-500"
           @click="handleEditClick"  
         >
-          editar            
+        Editar  
 
         </button>
 
@@ -27,7 +27,7 @@
           class="appearance-none font-bold bg-red-900 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-red-600"
           @click="handleDeleteClick"
         >
-          excluir
+          Excluir
           
         </button>
 
@@ -37,7 +37,7 @@
   
   <script>
 
-  import { computed } from "vue";                         //e 'computed'
+  import { computed } from "vue";   //e 'computed'
   
   export default {
   
@@ -51,7 +51,7 @@
     setup(props, { emit }) {
       const formattedTimestamp = computed(() => {
         const date = new Date(props.item.timestamp);
-  
+        
         return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
 
         components: {CheckboxEvent}
@@ -65,9 +65,9 @@
       function handleDeleteClick() {
         emit("delete", props.item);
       }
-   
+
       return {
-      
+
         formattedTimestamp,
         handleEditClick,
         handleDeleteClick,
