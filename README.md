@@ -23,7 +23,7 @@ cd todo-list
 npm install
 ```
 
-4. ##### Start a local dev server at `http://localhost:`:
+4. ##### Start a local dev server at `localhost:`:
 
 ```
 npm run serve 
