@@ -1,11 +1,10 @@
-# Vue 3 + Vite
+# TodoList Vue JS
 
 ToDo List ultilizando Vue 3 + vite + tailwind CSS 
 
 ## Recomendo ultilizar:
 
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [VS Code](https://code.visualstudio.com/) 
 
 1. ##### Clone the repo:
 
