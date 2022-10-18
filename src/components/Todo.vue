@@ -2,13 +2,13 @@
     <div class="font-sans font-thin space-y-4" >
       <div>
         <h1 class="font-sans font-light text-center pb-2 text-4xl text-slate-800">Minhas tarefas</h1>
-        <p class="text-l text-center font-light mb-8">Você tem {{ items.length }} tarefas.</p>
+        <p class="text-l text-center font-light mb-8">Você tem <strong>{{ items.length }}</strong> tarefa(s).</p>
       </div>
       <div>
         <TodoForm :item="item" @save="handleSave" />
       </div>
       <div>
-        <TodoList :items="items" @edit="handleEdit" @delete="handleDelete" />
+        <TodoList :items="items" @edit="handleEdit" @ok="handleOk" @delete="handleDelete" />
       </div>
     </div>
   </template>
@@ -34,7 +34,7 @@
     }
   }
   
-  function saveItemsToStarage(items) {    //salvar
+  function saveItemsToStarage(items) {  //salvar
     try {
       localStorage.setItem("items", JSON.stringify(items));
     } catch (e) {
@@ -87,6 +87,16 @@
   
         item.value = newItem();    
       }
+
+      function handleOk(itemToSumbit) {  //salvar novo item
+        if (itemToSumbit.id) {
+          updateExistingItem(itemToSumbit);
+        } else {
+          addNewItem(itemToSumbit);
+        }
+  
+        item.value = newItem();    
+      }
   
       function handleEdit(itemToEdit) {
         item.value = itemToEdit;
@@ -99,6 +109,7 @@
       return {                  
         item,
         items,
+        handleOk,
         handleSave,
         handleEdit,
         handleDelete,

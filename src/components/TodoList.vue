@@ -1,4 +1,5 @@
 <template>
+  
     <div class=""> 
       <TodoListItem
         v-for="item in items"
@@ -8,6 +9,7 @@
         @delete="handleDelete"
       />
     </div>
+
   </template>
   
   <script>

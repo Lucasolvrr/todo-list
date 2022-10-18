@@ -49,7 +49,7 @@
           inputRef.value.focus(); // focar no input logo após a mudança?
         }
       );
-  
+        
       function handleSubmit() {
         emit("save", { ...props.item, text: text.value }); //salvar após a mudança
       }
