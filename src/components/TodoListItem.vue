@@ -16,11 +16,13 @@
         <button  
           type="button"
           class="appearance-none font-bold bg-green-600 rounded text-white px-3 py-1 text-xs focus:outline-none focus:ring hover:bg-green-500"
-          @click="handleEditClick"  
+          @click="handleEditClick(item.id)"  
         >
-        Editar  
+         
+         {{ idSelecionado == item.id ? "editar" : "ok"}} 
 
         </button>
+        {{item.id}}
 
         <button
           type="button"
@@ -36,10 +38,13 @@
   </template>
   
   <script>
+  
 
   import { computed } from "vue";   //e 'computed'
   
   export default {
+  
+    data: () => ({editarTexto:null, idSelecionado:null}),
   
     props: {
       item: {
@@ -58,8 +63,13 @@
 
       });
       
-      function handleEditClick() {
+      function handleEditClick(value) {
+        this.editarTexto = true;
+        this.idSelecionado = value;
         emit("edit", props.item);
+        console.log(value)
+        debugger
+        
       }
   
       function handleDeleteClick() {
