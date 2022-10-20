@@ -1,119 +1,87 @@
 <template>
-  <div class="font-sans font-thin space-y-4" >
+  <div class="font-sans font-thin space-y-4">
     <div>
-      <h1 class="font-sans font-light text-center pb-2 text-4xl text-slate-800">Minhas tarefas</h1>
-      <p class="text-l text-center font-light mb-8">Você tem {{ items.length }} tarefas.</p>
+      <h1 class="font-sans font-light text-center pb-2 text-4xl text-slate-800">
+        Minhas tarefas
+      </h1>
+      <p class="text-l text-center font-light mb-8">
+        Você tem {{ items.length }} tarefas.
+      </p>
     </div>
     <div>
-      <TodoForm :item="item" @save="handleSave" @teste="setVariable"/>
+      <v-text-field color="purple"></v-text-field>
+      <TodoForm @save="saveItem" />
     </div>
     <div>
-      <TodoList :items="items" @edit="handleEdit" @delete="handleDelete" :setValue="setValor" />
+      <TodoList
+        :items="items"
+        @edit="edit"
+        @deleteItem="deleteItem"
+        :itemToEdit="itemToEdit"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import { ref, watch } from "vue";
 import TodoForm from "./TodoForm.vue";
 import TodoList from "./TodoList.vue";
-
-function newItem() {
-  return {
-    id: null,
-    text: "",
-    timestamp: null,
-  };
-}
-
-function getItemsFromStorage() {  //colocar itens na memória
-  try {
-    return JSON.parse(localStorage.getItem("items")) || [];
-  } catch (e) {
-    return [];
-  }
-}
-
-function saveItemsToStarage(items) {    //salvar
-  try {
-    localStorage.setItem("items", JSON.stringify(items));
-  } catch (e) {
-    
-  }
-}
-
 export default {
   components: {
     TodoForm,
     TodoList,
   },
-  data : () => ({
-    setValor: false
+  data: () => ({
+    items: [],
+    item: [],
+    textValue: null,
+    itemToEdit: null,
   }),
-  watch:{
-  },
   methods: {
-  setVariable(){
-  }
-  },
-
-  setup() {
-    const item = ref(newItem());
-    const items = ref(getItemsFromStorage());
-
-    watch(
-      () => items,
-      () => saveItemsToStarage(items.value),
-      { deep: true }
-    );
-
-    function findItemIndex(itemToFindIndex) {
-      return items.value.findIndex((item) => item.id === itemToFindIndex.id);
-    }
-
-    function addNewItem(item) {
-      items.value.push({
-        ...item,
-        id: new Date().getTime(), //e timestamp e 'Id' s
-        timestamp: new Date().getTime(),
+    deleteItem(item) {
+      var allItensFromLocalStorage = JSON.parse(localStorage.getItem("item"));
+      var finalList = allItensFromLocalStorage.filter((x) => x.id != item.id);
+      localStorage.setItem("item", JSON.stringify(finalList));
+      this.getItems();
+    },
+    edit(item) {
+      var batata = this.items.findIndex((item) => item.id === item.id);
+      this.items.splice(batata, item);
+      localStorage.setItem("item", JSON.stringify(this.items));
+    },
+    saveItem(v) {
+      localStorage.setItem("item", JSON.stringify(this.addNewItem(v)));
+      this.getItems();
+    },
+    getItems() {
+      debugger
+      var a = JSON.parse(localStorage.getItem("item"));
+      this.items = a;
+    },
+    findItemIndex(id) {
+      var items = JSON.parse(localStorage.getItem("item"));
+      var a = items.findIndex((item) => item.id === id);
+      return a;
+    },
+    addNewItem(item) {
+      this.items.push({
+        id: this.items.length,
+        text: item,
       });
-    }
-
-    function deleteItem(item) {                       //deletar
-      items.value.splice(findItemIndex(item), 1);
-    }
-
-    function updateExistingItem(item) {                //atualizar item
-      items.value.splice(findItemIndex(item), 1, item);
-    }
-
-    function handleSave(itemToSave) {  //salvar novo item
-      if (itemToSave.id) {
-        updateExistingItem(itemToSave);
-      } else {
-        addNewItem(itemToSave);
-      }
-
-      item.value = newItem();    
-    }
-    function teste(){
-    }
-
-    function handleEdit(itemToEdit) {
-      item.value = itemToEdit;
-    }
-
-    function handleDelete(itemToDelete) {
-      deleteItem(itemToDelete);                //deletar
-    }
-
-    return {                  
-      item,
-      items,
-      handleSave,
-      handleEdit,
-      handleDelete,
-    };
+      return this.items;
+    },
   },
+  mounted() {
+    this.getItems();
+  
+  },
+
+  // created(){
+  //   debugger
+  //   var a = [];
+  //   a.push({id: 1, text: "teste"})
+  //   localStorage.setItem("item", JSON.stringify(a))
+  // }
+
 };
 </script>
