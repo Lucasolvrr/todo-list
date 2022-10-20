@@ -28,7 +28,7 @@
         :placeholder="item.text"
         v-if="editId == item.id"
       />
-      <span
+      <span class="line-through text-gray-400"
         :class="returnChechboxValue(item.id) ? 'classeRiscada' : 'classePadrao'"
         v-if="editId != item.id"
         >{{ item.text }}</span
@@ -77,6 +77,7 @@
         @click="editItem(item)"
       >
         Ok
+        
       </button>
 
       <button
@@ -97,6 +98,7 @@
         @click="deleteItem(item.id)"
       >
         Excluir
+
       </button>
     </div>
   </div>
@@ -116,11 +118,11 @@ export default {
       this.$emit('deleteItem', id)
     },
     returnChechboxValue(id) {
-      var contains = this.checkboxList.filter((x) => x == id);
+      let contains = this.checkboxList.filter((x) => x == id);
       return contains.length > 0;
     },
     setCheckBox(id) {
-      var a = this.checkboxList.filter((x) => x == id);
+      let a = this.checkboxList.filter((x) => x == id);
       if (a.length > 0) {
         this.checkboxList = this.checkboxList.filter((x) => x != id);
       } else {
@@ -134,7 +136,7 @@ export default {
       this.editId = null;
     },
     setItemToEdit(item) {
-      debugger
+      
       this.input = item.text;
       this.editId = item.id;
       this.setBtnOk = true;
@@ -145,47 +147,11 @@ export default {
       type: Object,
       required: true,
     },
-<<<<<<< HEAD
-=======
-    batata: null
-  },
-  methods: {
-      handleEditClick(v) {
-      this.teste = v.id
-      this.$emit("edit", v);
-    }
-  },
-    watch: {
-      batata(){
-        debugger
-      }
-  },
-
-  setup(props, { emit }) {
-    const formattedTimestamp = computed(() => {
-      const date = new Date(props.item.timestamp);
-      
-      return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-      components: {CheckboxEvent}
-    });
-
-    function handleDeleteClick() {
-      emit("delete", props.item);
-    }
-    return {
-      formattedTimestamp,
-      handleDeleteClick,
-    };
->>>>>>> fa91cad (x)
   },
 };
 </script>
 
 <style scoped>
-.classeRiscada {
-  text-decoration: line-through;
-  color: gray;
-}
 .classePadrao {
   text-decoration: none;
   color: black;

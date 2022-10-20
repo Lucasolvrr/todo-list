@@ -35,3 +35,9 @@ methods:{
 <style lang="scss" scoped>
 </style> 
 
+ // created(){
+  //   debugger
+  //   var a = [];
+  //   a.push({id: 1, text: "teste"})
+  //   localStorage.setItem("item", JSON.stringify(a))
+  // }

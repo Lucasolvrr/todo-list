@@ -39,14 +39,14 @@ export default {
   }),
   methods: {
     deleteItem(item) {
-      var allItensFromLocalStorage = JSON.parse(localStorage.getItem("item"));
-      var finalList = allItensFromLocalStorage.filter((x) => x.id != item.id);
+      let allItensFromLocalStorage = JSON.parse(localStorage.getItem("item"));
+      let finalList = allItensFromLocalStorage.filter((x) => x.id != item.id);
       localStorage.setItem("item", JSON.stringify(finalList));
       this.getItems();
     },
     edit(item) {
-      var batata = this.items.findIndex((item) => item.id === item.id);
-      this.items.splice(batata, item);
+      let getItems = this.items.findIndex((item) => item.id === item.id);
+      this.items.splice(getItems, item);
       localStorage.setItem("item", JSON.stringify(this.items));
     },
     saveItem(v) {
@@ -54,13 +54,13 @@ export default {
       this.getItems();
     },
     getItems() {
-      debugger
-      var a = JSON.parse(localStorage.getItem("item"));
+      
+      let a = JSON.parse(localStorage.getItem("item"));
       this.items = a;
     },
     findItemIndex(id) {
-      var items = JSON.parse(localStorage.getItem("item"));
-      var a = items.findIndex((item) => item.id === id);
+      let items = JSON.parse(localStorage.getItem("item"));
+      let a = items.findIndex((item) => item.id === id);
       return a;
     },
     addNewItem(item) {
@@ -78,10 +78,10 @@ export default {
 
   // created(){
   //   debugger
-  //   var a = [];
+  //   let a = [];
   //   a.push({id: 1, text: "teste"})
   //   localStorage.setItem("item", JSON.stringify(a))
-  // }
+  //}
 
 };
 </script>

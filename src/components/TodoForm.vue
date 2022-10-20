@@ -41,7 +41,7 @@
           font-semibold
           rounded-lg
           shadow-md
-          hover:bg-neutral-900
+          hover:bg-neutral-800
           focus:outline-none
           focus:ring-2 focus:ring-neutral-700 focus:ring-opacity-75
           rounded-full
@@ -57,7 +57,7 @@
         :class="{ 'opacity-90': isDisabled }"
         :disabled="isDisabled"
       >
-      Adicionar
+        Adicionar 
       </button>
     </div>
   </form>
@@ -75,7 +75,7 @@ export default {
     save() {
       if (!this.text)
       {
-           alert("Preencha o campo!")
+           alert("Este campo é obrigatório!")
            return;
       }
       this.$emit("save", this.text);
