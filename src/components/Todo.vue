@@ -76,12 +76,13 @@ export default {
   
   },
 
-  // created(){
-  //   debugger
-  //   let a = [];
-  //   a.push({id: 1, text: "teste"})
-  //   localStorage.setItem("item", JSON.stringify(a))
-  //}
+   created(){
+   
+    let a = [];
+    a.push({id: 1, text: "teste"})
+    localStorage.setItem("item", JSON.stringify(a))
+  } 
 
 };
+
 </script>
