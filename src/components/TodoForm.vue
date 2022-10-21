@@ -24,6 +24,7 @@
         placeholder="Digite uma tarefa..."
       />
     </div>
+
     <div class="ml-4">
       <button
         @click.prevent="save"
@@ -58,9 +59,11 @@
         :disabled="isDisabled"
       >
         Adicionar 
+
       </button>
     </div>
   </form>
+
 </template>
 
 <script>
@@ -70,6 +73,7 @@ export default {
     isDisabled: null,
     text: null,
   }),
+
   props: { value: null },
   methods: {
     save() {
@@ -82,10 +86,12 @@ export default {
       this.text = "";
     },
   },
+
   watch: {
     itemToEdit() {
       this.text = this.itemToEdit.text;
     },
   },
 };
+
 </script>

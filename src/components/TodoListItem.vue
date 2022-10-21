@@ -105,6 +105,7 @@
 </template>
 
 <script>
+
 export default {
   data: () => ({
     editId: null,
@@ -112,15 +113,20 @@ export default {
     isEdit: null,
     setBtnOk: null,
     checkboxList: [],
+
   }),
+
   methods: {
+
     deleteItem(id){
       this.$emit('deleteItem', id)
     },
+
     returnChechboxValue(id) {
       let contains = this.checkboxList.filter((x) => x == id);
       return contains.length > 0;
     },
+
     setCheckBox(id) {
       let a = this.checkboxList.filter((x) => x == id);
       if (a.length > 0) {
@@ -129,18 +135,21 @@ export default {
         this.checkboxList.push(id);
       }
     },
+
     editItem(item) {
       item.text = this.input;
       this.$emit("edit", item);
       this.setBtnOk = false;
       this.editId = null;
     },
+
     setItemToEdit(item) {
       
       this.input = item.text;
       this.editId = item.id;
       this.setBtnOk = true;
     },
+
   },
   props: {
     item: {
@@ -149,6 +158,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>
