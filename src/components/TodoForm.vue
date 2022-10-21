@@ -82,6 +82,7 @@ export default {
            alert("Este campo é obrigatório!")
            return;
       }
+      
       this.$emit("save", this.text);
       this.text = "";
     },

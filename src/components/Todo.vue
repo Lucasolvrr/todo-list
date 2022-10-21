@@ -5,7 +5,9 @@
         Minhas tarefas
       </h1>
       <p class="text-l text-center font-light mb-8">
-        Você tem {{ items.length }} tarefas.
+
+        Você tem <strong>{{ items.length }}</strong> {{taskText}}.
+
       </p>
     </div>
     <div>
@@ -42,6 +44,12 @@ export default {
     itemToEdit: null,
 
   }),
+
+  computed: {
+     taskText(){
+      return this.items.length > 1 ? "tarefas" : "tarefa" 
+     }
+  },
 
   methods: {
 

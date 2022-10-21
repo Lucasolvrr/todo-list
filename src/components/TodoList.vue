@@ -1,13 +1,11 @@
 <template>
   <div class="">
     <TodoListItem
-
       v-for="item in items"
       :key="item.id"
       :item="item"
       @edit="edit(item)"
       @deleteItem="deleteItem(item)"
-
     />
   </div>
 </template>
@@ -33,7 +31,7 @@ export default {
     edit(id) {
       this.$emit("edit", id);
     },
-    
+
     deleteItem(val)
     {
       this.$emit("deleteItem", val);
