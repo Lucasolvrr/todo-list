@@ -68,12 +68,14 @@ export default {
       localStorage.setItem("item", JSON.stringify(this.items));
 
     },
+
     saveItem(v) {
 
       localStorage.setItem("item", JSON.stringify(this.addNewItem(v)));
       this.getItems();
 
     },
+
     getItems() { 
       let a = JSON.parse(localStorage.getItem("item"));
       this.items = a;

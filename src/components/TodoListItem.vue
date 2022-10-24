@@ -142,7 +142,7 @@ export default {
     },
 
     setItemToEdit(item) {
-      
+       
       this.input = item.text;
       this.editId = item.id;
       this.setBtnOk = true;

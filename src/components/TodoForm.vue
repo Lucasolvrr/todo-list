@@ -1,7 +1,6 @@
 <template>
   <form class="flex flex-wrap">
     <div class="flex-1">
-      <v-text-field> </v-text-field>
       <input
         ref="inputRef"
         v-model="text"
@@ -50,7 +49,7 @@
           w-28
           py-2
           px-3
-          text-center text-white
+          text-center 
           focus:outline-none
           focus:ring
           shadow-md
@@ -76,7 +75,9 @@ export default {
 
   props: { value: null },
   methods: {
+    
     save() {
+      
       if (!this.text)
       {
            alert("Este campo é obrigatório!")
