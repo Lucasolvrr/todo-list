@@ -11,7 +11,7 @@
       </p>
     </div>
     <div>
-      <v-text-field color="purple"></v-text-field>
+  
       <TodoForm @save="saveItem" />
     </div>
     <div>
@@ -30,13 +30,12 @@ import TodoForm from "./TodoForm.vue";
 import TodoList from "./TodoList.vue";
 
 export default {
-
   components: {
     TodoForm,
     TodoList,
   },
 
-  data: () => ({
+  data:() => ({
 
     items: [],
     item: [],
@@ -47,7 +46,7 @@ export default {
 
   computed: {
      taskText(){
-      return this.items.length > 1 ? "tarefas" : "tarefa" 
+      return this.items.length !== 1 ? "tarefas" : "tarefa" 
      }
   },
 
@@ -60,7 +59,7 @@ export default {
       localStorage.setItem("item", JSON.stringify(finalList));
       this.getItems();
 
-    },
+    },  
 
     edit(item) {
 
@@ -75,15 +74,13 @@ export default {
       this.getItems();
 
     },
-    getItems() {
-      
+    getItems() { 
       let a = JSON.parse(localStorage.getItem("item"));
       this.items = a;
 
     },
 
     findItemIndex(id) {
-
       let items = JSON.parse(localStorage.getItem("item"));
       let a = items.findIndex((item) => item.id === id);
       return a;
@@ -91,7 +88,6 @@ export default {
     },
 
     addNewItem(item) {
-
       this.items.push({
         id: this.items.length,
         text: item,
@@ -101,7 +97,7 @@ export default {
       return this.items;
     },
   },
-
+  
   mounted() {
     this.getItems();
   
@@ -109,7 +105,6 @@ export default {
 
    created(){
     let a = [];
-    a.push({id: 1, text: "teste"})
     localStorage.setItem("item", JSON.stringify(a))
   } 
 };

@@ -33,8 +33,6 @@
         v-if="editId != item.id"
         >{{ item.text }}</span
       >
-      <!-- {{item.text}} -->
-      <!-- {{ item.text }} -->
     </div>
     <div class="ml-auto space-x-2">
       <button

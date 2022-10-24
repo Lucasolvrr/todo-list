@@ -25,7 +25,7 @@
       />
     </div>
 
-    <div class="ml-4">
+    <div class="ml-4">  
       <button
         @click.prevent="save"
         type="submit"
