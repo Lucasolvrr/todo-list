@@ -1,11 +1,9 @@
-# Vue 3 + Vite
+# TodoList Vue JS
 
-ToDo List ultilizando Vue 3 + vite + tailwind CSS 
+ToDo List using Vue 3 + vite + tailwind CSS 
 
-## Recomendo ultilizar:
+## Setup Project Step-by-Step:
 
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
 1. ##### Clone the repo:
 
@@ -25,7 +23,7 @@ cd todo-list
 npm install
 ```
 
-4. ##### Start a local dev server at `http://localhost:`:
+4. ##### Start a local dev server at `localhost:`
 
 ```
 npm run serve 
