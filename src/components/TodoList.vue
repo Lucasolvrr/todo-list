@@ -1,42 +1,41 @@
 <template>
-    <div class=""> 
-      <TodoListItem
-        v-for="item in items"
-        :key="item.id"
-        :item="item"
-        @edit="handleEdit"
-        @delete="handleDelete"
-      />
-    </div>
-  </template>
-  
-  <script>
-  import TodoListItem from "./TodoListItem.vue";
-  
-  export default {
-    components: {
-      TodoListItem,
+  <div class="">
+    <TodoListItem
+      v-for="item in items"
+      :key="item.id"
+      :item="item"
+      @edit="edit(item)"
+      @deleteItem="deleteItem(item)"
+    />
+  </div>
+</template>
+
+<script>
+
+import TodoListItem from "./TodoListItem.vue";
+export default {
+  components: {
+    TodoListItem,
+  },
+
+  props: {
+    itemToEdit: null,
+    items: {
+      type: Array,
+      required: true,
+
     },
-      props: {
-        items: {
-          type: Array,
-          required: true,
-      },
+  },
+
+  methods: {
+    edit(id) {
+      this.$emit("edit", id);
     },
-  
-    setup(_, { emit }) {            // e 'emit'
-      function handleEdit(item) {
-        emit("edit", item);       //aplicar edição
-      }
-  
-      function handleDelete(item) {
-        emit("delete", item);        
-      }
-  
-      return {
-        handleEdit,
-        handleDelete,
-      };
-    },
-  };
-  </script>
+
+    deleteItem(val)
+    {
+      this.$emit("deleteItem", val);
+    }
+  },
+};
+</script>

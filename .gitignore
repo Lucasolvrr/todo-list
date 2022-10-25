@@ -1,3 +1,6 @@
+
+teste2
+
 # Logs
 logs
 *.log
@@ -23,4 +26,6 @@ dist-ssr
 *.sln
 *.sw?
 
-teste
+teste2
+
+zfileModel.vue

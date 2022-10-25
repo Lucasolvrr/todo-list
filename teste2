@@ -1,0 +1,44 @@
+
+<template>
+
+</template>
+      
+<script>
+
+import VuePerfectScrollbar from "vue-perfect-scrollbar";
+import lodash from "lodash";
+
+export default {
+
+components: { 
+
+      }, 
+
+props: { 
+
+     },
+
+data() {
+     return {  //aqui ficam as variaveis }},  
+    
+computed: { 
+
+ }  
+
+methods:{
+        // Aqui ficam os metodos 
+    }, 
+ }
+
+</script>
+
+<style lang="scss" scoped>
+
+</style> 
+
+ // created(){
+  //   debugger
+  //   var a = [];
+  //   a.push({id: 1, text: "teste"})
+  //   localStorage.setItem("item", JSON.stringify(a))
+  // }
